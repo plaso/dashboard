@@ -1,0 +1,27 @@
+@use "src/assets/utils" as *;
+
+.Dashboard {
+  display: flex;
+  flex-wrap: nowrap;
+
+  &__content {
+    padding: 2rem;
+    width: 100%;
+    
+    &__userInfo {
+      text-align: right;
+
+      &__name {
+        font-weight: 700;
+      }
+
+      &__role {
+        font-size: 0.75rem;
+      }
+
+      &__section {
+        @include box;
+      }
+    }
+  }
+}
