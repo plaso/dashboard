@@ -1,22 +1,28 @@
-import useQuery from "hooks/useQuery";
 import { useCallback, useEffect } from "react";
-import jwt from "jsonwebtoken";
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import useQuery from "hooks/useQuery";
 import BeatLoader from "react-spinners/BeatLoader";
 import { login } from "services/AuthService";
+import { setAccessToken } from "stores/AccessTokenStore";
 import "./SignInGateway.scss";
+import { decode } from "features/userSlice";
 
 const SignInGateway = () => {
+  const { push } = useHistory();
+  const dispatch = useDispatch();
+
   const query = useQuery();
   const code = query.get("code");
 
   const loginFn = useCallback(async () => {
     if (code) {
-      const result = await login(code);
-      const decoded = jwt.decode(result.access_token, { complete: true });
-      console.log(decoded?.payload._doc);
-      debugger;
+      const { access_token } = await login(code);
+      setAccessToken(access_token);
+      dispatch(decode(access_token));
+      push("/dashboard");
     }
-  }, [code]);
+  }, [code, push, dispatch]);
 
   useEffect(() => {
     loginFn();
