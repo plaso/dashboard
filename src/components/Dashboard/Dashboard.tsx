@@ -16,7 +16,9 @@ const Dashboard = () => {
             Secret dashboard
           </div>
 
-          <div className="Dashboard__content__section__body"></div>
+          <div className="Dashboard__content__section__body">
+            body
+          </div>
         </div>
       </div>
     </div>

@@ -1,3 +1,5 @@
+@use "src/assets/utils" as *;
+
 .Menu {
   width: 200px;
 
@@ -8,4 +10,5 @@
 
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
   height: 100vh;
+  background-color: $c-secondary;
 }

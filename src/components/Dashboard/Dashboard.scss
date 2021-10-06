@@ -19,8 +19,23 @@
         font-size: 0.75rem;
       }
 
-      &__section {
-        @include box;
+    }
+
+    &__section {
+      @include box;
+
+      margin-top: 1rem;
+      height: 100%;
+      overflow: hidden;
+
+      &__title {
+        background-color: #eeeeee;
+        padding: 2rem;
+        font-weight: 700;
+      }
+
+      &__body {
+        padding: 1rem 2rem;
       }
     }
   }
