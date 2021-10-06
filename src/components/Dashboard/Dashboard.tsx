@@ -1,6 +1,9 @@
 import { useSelector } from "react-redux";
+import { Route, Switch } from "react-router-dom";
 import Menu from "components/common/Menu";
 import { selectUser } from "features/userSlice";
+import Info from "./Info";
+import Settings from "./Settings";
 import "./Dashboard.scss";
 
 const Dashboard = () => {
@@ -22,7 +25,12 @@ const Dashboard = () => {
             Secret dashboard
           </div>
 
-          <div className="Dashboard__content__section__body">body</div>
+          <div className="Dashboard__content__section__body">
+            <Switch>
+              <Route exact path="/dashboard" component={Info} />
+              <Route exact path="/dashboard/settings" component={Settings} />
+            </Switch>
+          </div>
         </div>
       </div>
     </div>
