@@ -1,0 +1,9 @@
+@use "src/assets/utils" as *;
+
+.SignInGateway {
+  min-height: 100vh;
+  background-color: $c-primary-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
