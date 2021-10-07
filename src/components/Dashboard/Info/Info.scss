@@ -10,21 +10,44 @@
     }
   }
 
-  li {
-    font-size: 0.85rem;
+  ul {
+    margin-bottom: 2rem;
+    li {
+      font-size: 0.85rem;
 
-    + li {
-      margin-top: 0.5rem;
+      a {
+        text-decoration: none;
+        color: $c-primary;
+        transition: color 0.1s ease-in;
+
+        &:hover {
+          color: $c-text;
+        }
+      }
+
+      + li {
+        margin-top: 0.5rem;
+      }
     }
   }
 
-  a {
-    text-decoration: none;
-    color: $c-primary;
-    transition: color 0.1s ease-in;
+  &__repos {
+    display: flex;
+    flex-wrap: wrap;
 
-    &:hover {
-      color: $c-text;
+    &__item {
+      width: 50%;
+      margin-bottom: 1rem;
+
+      p {
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        font-size: 0.85rem;
+      }
+
+      .Button {
+        font-size: 0.75rem;
+      }
     }
   }
 }
