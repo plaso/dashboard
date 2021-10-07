@@ -36,7 +36,9 @@
     flex-wrap: wrap;
 
     &__item {
-      width: 50%;
+      @media screen and (min-width: $breakpoint) {
+        width: 50%;
+      }
       margin-bottom: 1rem;
 
       p {

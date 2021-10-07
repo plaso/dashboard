@@ -1,6 +1,9 @@
 @use "src/assets/utils" as *;
 
 .Menu {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 200px;
   min-width: 200px;
 
