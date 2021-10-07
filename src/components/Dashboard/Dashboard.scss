@@ -18,6 +18,7 @@
 
       &__role {
         font-size: 0.75rem;
+        margin-bottom: 1rem;
       }
     }
 
@@ -45,6 +46,14 @@
           min-height: 200px;
         }
       }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint) {
+  .Dashboard {
+    &__content__userInfo .Button {
+      display: none;
     }
   }
 }

@@ -8,6 +8,8 @@ import Settings from "./Settings";
 import "./Dashboard.scss";
 import { useEffect } from "react";
 import { fetchInfo, selectInfo } from "features/infoSlice";
+import Button from "components/common/Button";
+import { logout } from "stores/AccessTokenStore";
 
 const Dashboard = () => {
   const { pathname } = useLocation();
@@ -33,6 +35,7 @@ const Dashboard = () => {
           <div className="Dashboard__content__userInfo__role">
             {user.userName}
           </div>
+          <Button action={logout}>Logout</Button>
         </div>
 
         <div className="Dashboard__content__section">
