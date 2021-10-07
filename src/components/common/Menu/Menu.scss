@@ -1,6 +1,9 @@
 @use "src/assets/utils" as *;
 
 .Menu {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 200px;
   min-width: 200px;
 
@@ -23,7 +26,7 @@
       padding-top: 0.75rem;
       padding-bottom: 0.75rem;
       padding-left: 1rem;
-      padding-right: auto;
+      padding-right: 0;
       text-align: left;
       text-decoration: none;
       color: $c-text;

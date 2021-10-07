@@ -1,3 +1,4 @@
+import Button from "components/common/Button";
 import InfoItem from "components/common/InfoItem";
 import { selectInfo } from "features/infoSlice";
 import { useSelector } from "react-redux";
@@ -34,11 +35,27 @@ const Info = () => {
           </a>
         </li>
         <li>
-          <a href={info.repos_url} target="_blank" rel="noreferrer">
+          <a
+            href={`${info.html_url}?tab=repositories`}
+            target="_blank"
+            rel="noreferrer"
+          >
             Repositories
           </a>
         </li>
       </ul>
+
+      <p>
+        <strong>Latest repositories:</strong>
+      </p>
+      <div className="Info__repos">
+        {info.repos?.map((repo) => (
+          <div className="Info__repos__item" key={repo.id}>
+            <p>{repo.name}</p>
+            <Button action={repo.html_url}>See on Github</Button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

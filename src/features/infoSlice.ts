@@ -10,6 +10,7 @@ export type InfoResponse = {
   public_gists?: number;
   html_url?: string;
   repos_url?: string;
+  repos?: { name: string; html_url: string; id: number }[];
 };
 
 type InitialState = {
