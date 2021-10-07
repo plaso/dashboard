@@ -11,6 +11,8 @@
   padding: 0.5rem 1.5rem;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+  display: inline-block;
+  text-decoration: none;
 
   &:hover {
     background-color: $c-secondary;

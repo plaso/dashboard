@@ -6,6 +6,7 @@ import { RootState } from "app/store";
 export interface UserState {
   _id: string;
   displayName: string;
+  userName: string;
   authenticated: boolean;
 }
 
@@ -17,6 +18,7 @@ export const decodeToken = (token: string): UserState | undefined => {
     return {
       _id: data._id,
       displayName: data.displayName,
+      userName: data.userName,
       authenticated: true,
     };
   } catch {
@@ -28,6 +30,7 @@ const token = getAccessToken();
 const initialState: UserState = (token && decodeToken(token)) || {
   _id: "",
   displayName: "",
+  userName: "",
   authenticated: false,
 };
 

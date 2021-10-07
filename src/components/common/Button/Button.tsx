@@ -8,10 +8,17 @@ interface ButtonProps {
 
 const Button = ({ children, action }: ButtonProps) => {
   if (typeof action === "string") {
+    if (action.startsWith("/")) {
+      return (
+        <Link to={action} className="Button">
+          {children}
+        </Link>
+      );
+    }
     return (
-      <Link to={action} className="Button">
+      <a href={action} className="Button">
         {children}
-      </Link>
+      </a>
     );
   }
 

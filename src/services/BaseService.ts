@@ -1,5 +1,5 @@
 import axios from "axios";
-import { logout } from "stores/AccessTokenStore";
+import { getAccessToken, logout } from "stores/AccessTokenStore";
 
 type HttpClientConfig = {
   baseURL: string;
@@ -13,8 +13,8 @@ export const getHttpClient = ({
   const http = axios.create({ baseURL });
 
   http.interceptors.request.use((request) => {
-    if (useAppToken && request.headers) {
-      request.headers["Authorization"] = `Bearer`;
+    if (useAppToken && request.headers && getAccessToken()) {
+      request.headers["Authorization"] = `Bearer ${getAccessToken()}`;
     }
 
     return request;
